@@ -3,9 +3,11 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import HomePage from "./pages/home/home.component";
 import ShopPage from "./pages/shop/shop.component";
+import CheckoutPage from "./pages/checkout/checkout.component";
 import SignInAndSignUpPage from "./components/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Header from "./components/header/header.component";
 import { setCurrentUser } from "./redux/user/user.actions";
+import { selectCurrentUser } from "./redux/user/user.selectors";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import "./App.css";
 
@@ -53,6 +55,7 @@ class App extends Component {
               )
             }
           />
+          <Route path="/checkout" component={CheckoutPage} />
         </Switch>
       </>
     );
@@ -60,7 +63,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
+  currentUser: selectCurrentUser(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({

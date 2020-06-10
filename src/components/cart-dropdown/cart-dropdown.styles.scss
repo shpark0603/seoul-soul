@@ -18,6 +18,23 @@
     overflow-y: auto;
   }
 
+  .empty-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+  }
+
+  .empty-message span {
+    font-size: 18px;
+    display: block;
+  }
+
+  .empty-message span[role="img"] {
+    font-size: 30px;
+  }
+
   button {
     margin-top: auto;
   }
