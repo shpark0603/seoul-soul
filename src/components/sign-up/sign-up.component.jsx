@@ -61,7 +61,7 @@ class SignUp extends Component {
             value={displayName}
             onChange={this.handleChange}
             label="Display Name"
-            retuired
+            required
           />
           <FormInput
             type="email"
@@ -69,7 +69,7 @@ class SignUp extends Component {
             value={email}
             onChange={this.handleChange}
             label="Email"
-            retuired
+            required
           />
           <FormInput
             type="password"
@@ -77,7 +77,7 @@ class SignUp extends Component {
             value={password}
             onChange={this.handleChange}
             label="Password"
-            retuired
+            required
           />
           <FormInput
             type="password"
@@ -85,7 +85,7 @@ class SignUp extends Component {
             value={confirmPassword}
             onChange={this.handleChange}
             label="Confirm Password"
-            retuired
+            required
           />
           <Button type="submit">SIGN UP</Button>
         </form>
