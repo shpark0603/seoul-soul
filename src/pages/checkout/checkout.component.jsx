@@ -5,8 +5,9 @@ import {
   selectCartItems,
   selectCartTotal,
 } from "../../redux/cart/cart.selectors";
-import "./checkout.styles.scss";
 import CheckoutItem from "../../components/checkout-item/checkout-item.component";
+import StripeCheckoutButton from "../../components/stripe-button/stripe-button.component";
+import "./checkout.styles.scss";
 
 function CheckoutPage({ items, total }) {
   return (
@@ -34,6 +35,12 @@ function CheckoutPage({ items, total }) {
       <div className="total">
         <span>TOTAL: ${total}</span>
       </div>
+      <div className="test-warning">
+        *다음의 테스트용 신용카드 번호로 결제 과정을 시험해볼 수 있습니다*
+        <br />
+        4242 4242 4242 4242 - Exp: 01/22 - CVV: 123
+      </div>
+      <StripeCheckoutButton price={total} />
     </div>
   );
 }
