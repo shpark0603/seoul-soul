@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { toggleCartHidden } from "../../redux/cart/cart.actions";
+import { createToggleCartHiddenAction } from "../../redux/cart/cart.actions";
 import { selectCartItemsCount } from "../../redux/cart/cart.selectors";
 import { ReactComponent as IconImage } from "../../assets/shopping-bag.svg";
 import "./cart-icon.styles.scss";
@@ -23,7 +23,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleCartHidden: () => dispatch(toggleCartHidden()),
+  toggleCartHidden: () => dispatch(createToggleCartHiddenAction()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
